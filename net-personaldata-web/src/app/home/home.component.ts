@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { ApiService } from '../api.service';
+import { PersonalDataInformation } from '../personal-data-form/PersonalDataInformation';
 
 @Component({
   selector: 'app-home',
@@ -11,14 +12,8 @@ import { ApiService } from '../api.service';
 export class HomeComponent implements OnInit {
 
     accessToken: string;
-    userData: any;
-
-    user = {
-      name: 'John Doe',
-      email: 'john.doe@example.com',
-      image: 'https://via.placeholder.com/150'
-    };
-  
+    userData: PersonalDataInformation;
+ 
     timelineItems = [
       { date: '2024-03-09', content: 'Item 1' },
       { date: '2024-03-10', content: 'Item 2' },
@@ -33,7 +28,7 @@ export class HomeComponent implements OnInit {
         this.accessToken = this.oauthService.getAccessToken();
 
         this.apiService.getUserData(this.accessToken).subscribe(
-            (data) => {
+            (data: PersonalDataInformation) => {
               this.userData = data;
             },
             (error) => {
@@ -41,5 +36,4 @@ export class HomeComponent implements OnInit {
             }
           );
     }
-
 }

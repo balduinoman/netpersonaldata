@@ -4,5 +4,4 @@ export class PersonalDataInformation {
     phoneNumber: string;
     email: string;
     address: string;
-    photo: string;
   }  

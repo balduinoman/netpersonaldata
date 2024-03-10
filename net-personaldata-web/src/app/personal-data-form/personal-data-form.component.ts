@@ -12,9 +12,29 @@ import { OAuthService } from 'angular-oauth2-oidc';
 export class PersonalDataFormComponent {
 
     accessToken: string;
+    userData: PersonalDataInformation;
+    firstName: string;
 
     constructor(private oauthService: OAuthService, private apiService: ApiService) { 
+
+
+
     }
+
+  ngOnInit() {
+      this.accessToken = this.oauthService.getAccessToken();
+
+      this.apiService.getUserData(this.accessToken).subscribe(
+          (data: PersonalDataInformation) => {
+            this.userData = data;
+          },
+          (error) => {
+            console.error('Error loading user data:', error);
+          }
+        );
+
+
+  }
 
   submitForm(form: NgForm) {
     if (form.valid) {
@@ -23,16 +43,14 @@ export class PersonalDataFormComponent {
         lastName: form.value.lastName,
         phoneNumber: form.value.phoneNumber,
         email: form.value.email,
-        address: form.value.address,
-        photo: form.value.photo
+        address: form.value.address
       };
 
         this.accessToken = this.oauthService.getAccessToken();
 
-        this.apiService.addPersonalData(this.accessToken, personalData).subscribe(
+        this.apiService.updatePersonalData(this.accessToken, personalData).subscribe(
         () => {
           // Reset the form after successful submission
-          form.resetForm();
           console.log('Form submitted successfully');
         },
         error => {

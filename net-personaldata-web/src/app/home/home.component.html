@@ -1,9 +1,10 @@
 <div class="profile-page">
   <div class="profile-info">
-    <img [src]="user.image" alt="User Image" class="user-image">
     <div class="user-details">
-      <h2>{{ user.name }}</h2>
-      <p>{{ user.email }}</p>
+      <h2>{{ this.userData.firstName }}</h2>
+      <p>{{ this.userData.email }}</p>
+      <p>{{ this.userData.phoneNumber }}</p>
+      <p>{{ this.userData.address }}</p>
     </div>
   </div>
   <div class="timeline">

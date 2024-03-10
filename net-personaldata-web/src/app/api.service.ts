@@ -11,13 +11,18 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  getUserData(accessToken: string): Observable<any> {
+  getUserData(accessToken: string): Observable<PersonalDataInformation> {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${accessToken}`);
-    return this.http.get(`${this.apiUrl}`, { headers });
+    return this.http.get<PersonalDataInformation>(`${this.apiUrl}`, { headers });
   }
 
   addPersonalData(accessToken: string, personalData: PersonalDataInformation) {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${accessToken}`);
     return this.http.post(this.apiUrl, personalData, { headers });
+  }
+
+  updatePersonalData(accessToken: string, personalData: PersonalDataInformation) {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${accessToken}`);
+    return this.http.put(this.apiUrl, personalData, { headers });
   }
 }
