@@ -1,0 +1,42 @@
+
+.profile-page {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Other styles remain the same */
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* Other styles remain the same */
+.user-details {
+  margin-top: 10px;
+}
+
+/* Other styles remain the same */
+.timeline {
+  flex: 1;
+  border-left: 1px solid #ccc;
+  padding: 20px;
+}
+
+/* Other styles remain the same */
+.timeline-item {
+  margin-bottom: 20px;
+}
+
+/* Other styles remain the same */
+.timeline-date {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Other styles remain the same */
+.timeline-content {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+}

@@ -1,0 +1,21 @@
+<div class="top-bar">
+  <div class="logo">
+    <h1>My Social Media</h1>
+  </div>
+  <div class="actions">
+    <ng-container *ngIf="token">
+      <button (click)="toggleChildHome()">Home</button>
+    </ng-container> &nbsp;
+    <ng-container *ngIf="token">
+      <button (click)="toggleChildPersonalDataForm()">Alterar meus dados</button>
+    </ng-container> &nbsp;
+    <ng-container *ngIf="token; else loggedOut">
+      <button (click)="logout()">Logout</button>
+    </ng-container> 
+    <ng-template #loggedOut>
+      <button (click)="login()">Login</button>
+    </ng-template>
+  </div>
+</div>
+
+  <router-outlet *ngIf="token"></router-outlet>

@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Use Roboto as the primary font */
+  }
+
+
+  
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #333333;
+    color: #fff;
+  }
+  
+  .logo h1 {
+    margin: 0;
+  }
+  
+  .actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .actions button:hover {
+    background-color: #ddd;
+  }
+  
+  .text-danger {
+    color: red;
+  }
