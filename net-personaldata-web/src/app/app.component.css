@@ -1,27 +1,28 @@
-
 .top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background-color: #333333;
-    color: #fff;
-  }
-  
-  .logo h1 {
-    margin: 0;
-  }
-  
-  .actions button {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #f0f0f0;
-    color: #333;
-    cursor: pointer;
-  }
-  
-  .actions button:hover {
-    background-color: #ddd;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #2c3e50; /* Darker background color */
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 24px; /* Increase font size for logo */
+}
+
+.actions button {
+  padding: 8px 16px; /* Increase padding for buttons */
+  border: none;
+  border-radius: 5px;
+  background-color: #3498db; /* Button color */
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Add smooth hover effect */
+}
+
+.actions button:hover {
+  background-color: #2980b9; /* Darker hover color */
+}

@@ -43,7 +43,13 @@ export class PersonalDataFormComponent {
         lastName: form.value.lastName,
         phoneNumber: form.value.phoneNumber,
         email: form.value.email,
-        address: form.value.address
+        address: form.value.address,
+        webSite: form.value.website,
+        profile: form.value.profile,
+        education: form.value.education,
+        employmentHistory: form.value.employmentHistory,
+        languages: form.value.languages,
+        certifications: form.value.certifications
       };
 
         this.accessToken = this.oauthService.getAccessToken();

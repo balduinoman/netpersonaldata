@@ -1,29 +1,60 @@
+
 <br><br>
 <form class="form-container" #form="ngForm" (ngSubmit)="submitForm(form)">
-    <div class="form-title">Personal Data Form</div>
-    <div class="form-group">
+  <div class="form-title">Personal Data Form</div>
+  <div class="form-group">
+    <div class="column">
       <label for="firstName">First Name:</label>
       <input type="text" id="firstName" name="firstName" ngModel required [(ngModel)]="this.userData.firstName">
     </div>
-    <div class="form-group">
+    <div class="column">
       <label for="lastName">Last Name:</label>
       <input type="text" id="lastName" name="lastName" ngModel required [(ngModel)]="this.userData.lastName">
     </div>
-    <div class="form-group">
+  </div>
+  <div class="form-group">
+    <div class="column">
       <label for="phoneNumber">Phone Number:</label>
       <input type="tel" id="phoneNumber" name="phoneNumber" ngModel [(ngModel)]="this.userData.phoneNumber">
     </div>
-    <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" ngModel #email="ngModel" required email [(ngModel)]="this.userData.email">
-        <div *ngIf="email.invalid && (email.dirty || email.touched)">
-            <small class="text-danger" *ngIf="email.errors?.required">Email is required</small>
-            <small class="text-danger" *ngIf="email.errors?.email">Invalid email format</small>
-        </div>
+    <div class="column">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" ngModel #email="ngModel" required email [(ngModel)]="this.userData.email">
+      <div *ngIf="email.invalid && (email.dirty || email.touched)">
+        <small class="text-danger" *ngIf="email.errors?.required">Email is required</small>
+        <small class="text-danger" *ngIf="email.errors?.email">Invalid email format</small>
+      </div>
     </div>
-    <div class="form-group">
+  </div>
+  <div class="form-group">
+    <div class="column">
       <label for="address">Address:</label>
       <input type="text" id="address" name="address" ngModel [(ngModel)]="this.userData.address">
     </div>
-    <button type="submit" class="form-submit">Submit</button>
-  </form>
+    <div class="column">
+      <label for="website">Website:</label>
+      <input type="text" id="website" name="website" ngModel [(ngModel)]="this.userData.webSite">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="column">
+      <label for="employmentHistory">Employment History:</label>
+      <textarea id="employmentHistory" cols="45" name="employmentHistory" ngModel [(ngModel)]="this.userData.employmentHistory"></textarea>
+    </div>
+    <div class="column">
+      <label for="languages">Languages:</label>
+      <input type="text" id="languages" name="languages" ngModel [(ngModel)]="this.userData.languages">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="column">
+      <label for="profile">Profile:</label>
+      <textarea id="profile" cols="45" name="profile" ngModel [(ngModel)]="this.userData.profile"></textarea>
+    </div>
+    <div class="column">
+      <label for="certifications">Certifications:</label>
+      <textarea id="certifications" cols="45" name="certifications" ngModel [(ngModel)]="this.userData.certifications"></textarea>
+    </div>
+  </div>
+  <button type="submit" class="form-submit">Submit</button>
+</form>

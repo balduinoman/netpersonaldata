@@ -1,16 +1,13 @@
-<div class="profile-page">
-  <div class="profile-info">
-    <div class="user-details">
-      <h2>{{ this.userData.firstName }}&nbsp;{{ this.userData.lastName }}</h2>
-      <p>{{ this.userData.email }}</p>
-      <p>{{ this.userData.phoneNumber }}</p>
-      <p>{{ this.userData.address }}</p>
-    </div>
-  </div>
-  <div class="timeline">
-    <div class="timeline-item" *ngFor="let item of timelineItems">
-      <div class="timeline-date">{{ item.date }}</div>
-      <div class="timeline-content">{{ item.content }}</div>
-    </div>
-  </div>
+<br><br>
+<div class="profile-container">
+  <h1>{{ this.userData.firstName }} {{ this.userData.lastName }}</h1>
+  <p><strong>Email:</strong> {{ this.userData.email }}</p>
+  <p><strong>Phone:</strong> {{ this.userData.phoneNumber }}</p>
+  <p><strong>Address:</strong> {{ this.userData.address }}</p>
+  <p><strong>Website:</strong> {{ this.userData.webSite }}</p>
+  <p><strong>Profile:</strong> {{ this.userData.profile }}</p>
+  <p><strong>Education:</strong> {{ this.userData.address }}</p>
+  <p><strong>Employment History:</strong> {{ this.userData.employmentHistory }}</p>
+  <p><strong>Languages:</strong> {{ this.userData.languages }}</p>
+  <p><strong>Certifications:</strong> {{ this.userData.certifications }}</p>
 </div>
