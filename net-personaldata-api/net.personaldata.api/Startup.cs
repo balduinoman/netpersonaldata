@@ -56,7 +56,7 @@ namespace net.personaldata.api
 
             services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Order API", Version = "v1" });
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Personal Data Information API", Version = "v1" });
 
                 options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
                 {

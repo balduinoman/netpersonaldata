@@ -1,5 +1,7 @@
 ﻿using net.personaldata.domain.Entities;
 using net.personaldata.domain.Infrastructure.Repositories;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace net.personaldata.domain.Services
 {
@@ -16,6 +18,11 @@ namespace net.personaldata.domain.Services
         {
             personalDataInformation.Id = personalDataInformation.Email;
             _personalDataRepository.Add(personalDataInformation);
+        }
+
+        public IList<string> GetAllEmails()
+        {
+            return _personalDataRepository.GetAll().Select(s => s.Email).ToList();
         }
 
         public PersonalDataInformation GetPersonalDataInformation(string id)

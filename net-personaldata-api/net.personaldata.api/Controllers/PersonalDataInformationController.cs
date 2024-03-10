@@ -3,13 +3,14 @@ using Microsoft.Extensions.Logging;
 using net.personaldata.domain.Entities;
 using net.personaldata.domain.Services;
 using net.personaldata.security.attributes;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 
 namespace net.personaldata.api.Controllers
 {
     /// <summary>
-    /// 
+    /// Personal Data Information Web Api
     /// </summary>
     [ApiController]
     [Route("/api/v1/[controller]")]
@@ -19,7 +20,7 @@ namespace net.personaldata.api.Controllers
         private readonly IPersonalDataInformationService _personalDataInformationService;
 
         /// <summary>
-        /// 
+        /// Constructor
         /// </summary>
         /// <param name="logger"></param>
         /// <param name="personalDataInformationService"></param>
@@ -32,9 +33,9 @@ namespace net.personaldata.api.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Gets a determined personal data information related to the token's owner user
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Personal data information related to the token's owner user</returns>
         [HttpGet]
         [TokenAuthorizeAttibute]
         public PersonalDataInformation Get()
@@ -50,6 +51,17 @@ namespace net.personaldata.api.Controllers
                 return _personalDataInformationService.GetPersonalDataInformation(personalDataInformation.Email);
             else
                 return null;
+        }
+
+        /// <summary>
+        /// Gets all emails
+        /// </summary>
+        /// <returns>All emails recorded </returns>
+        [HttpGet("GetAllEmails")]
+        [TokenAuthorizeAttibute]
+        public IList<string> GetAllEmails()
+        {
+            return _personalDataInformationService.GetAllEmails();
         }
 
         private PersonalDataInformation ParseAccessToken(string token)
@@ -71,9 +83,9 @@ namespace net.personaldata.api.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Adds a personal data information
         /// </summary>
-        /// <param name="personalDataInformation"></param>
+        /// <param name="personalDataInformation">Personal data informations</param>
         [HttpPost]
         [TokenAuthorizeAttibute]
         public void Add([FromForm]PersonalDataInformation personalDataInformation)
@@ -82,9 +94,9 @@ namespace net.personaldata.api.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Updates a personal data information
         /// </summary>
-        /// <param name="personalDataInformation"></param>
+        /// <param name="personalDataInformation">Personal data informations</param>
         [HttpPut]
         [TokenAuthorizeAttibute]
         public void Update(PersonalDataInformation personalDataInformation)
