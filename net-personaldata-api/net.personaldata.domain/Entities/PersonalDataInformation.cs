@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using Microsoft.AspNetCore.Http;
+using System.Text.Json.Serialization;
 
 namespace net.personaldata.domain.Entities
 {
@@ -37,10 +38,5 @@ namespace net.personaldata.domain.Entities
         /// Personal Data's address
         /// </summary>
         public string Address { get; set; }
-
-        /// <summary>
-        /// Personal Data's photo
-        /// </summary>
-        public string Photo { get; set; }
     }
 }

@@ -64,8 +64,7 @@ namespace net.personaldata.api.Controllers
                 LastName = jwtToken.Claims.FirstOrDefault(c => c.Type == "family_name")?.Value,
                 PhoneNumber = jwtToken.Claims.FirstOrDefault(c => c.Type == "phone_number")?.Value,
                 Email = jwtToken.Claims.FirstOrDefault(c => c.Type == "email")?.Value,
-                Address = jwtToken.Claims.FirstOrDefault(c => c.Type == "address")?.Value,
-                Photo = jwtToken.Claims.FirstOrDefault(c => c.Type == "photo")?.Value
+                Address = jwtToken.Claims.FirstOrDefault(c => c.Type == "address")?.Value
             };
 
             return personalData;
@@ -77,7 +76,7 @@ namespace net.personaldata.api.Controllers
         /// <param name="personalDataInformation"></param>
         [HttpPost]
         [TokenAuthorizeAttibute]
-        public void Add(PersonalDataInformation personalDataInformation)
+        public void Add([FromForm]PersonalDataInformation personalDataInformation)
         {
             _personalDataInformationService.Add(personalDataInformation);
         }

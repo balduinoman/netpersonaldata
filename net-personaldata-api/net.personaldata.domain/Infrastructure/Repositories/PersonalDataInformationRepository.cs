@@ -56,7 +56,6 @@ namespace net.personaldata.domain.Infrastructure.Repositories
             personalDataInformationRecovered.PhoneNumber = personalDataInformation.PhoneNumber;
             personalDataInformationRecovered.FirstName = personalDataInformation.FirstName;
             personalDataInformationRecovered.LastName = personalDataInformation.LastName;
-            personalDataInformationRecovered.Photo = personalDataInformation.Photo;
         }
     }
 }
