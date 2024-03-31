@@ -11,4 +11,4 @@ Neste módulo, os alunos aprendem a desenvolver uma aplicação prática que imp
 1. Clone este repositório em sua máquina local:
 
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   git clone https://github.com/balduinoman/netpersonaldata.git
